@@ -10,14 +10,10 @@ function App() {
   const [status, setStatus] = useState('all');
   const [filteredTodos, setFilteredTodos] = useState([]);
 
-//run once when app starts, therefore it has empty array
-/*useEffect (() => {
-  getLocalTodos();
-},[]);*/
+
 //use effect function, with array of obj
   useEffect(() => {
     filterHandler();
-    //saveLocalTodos();
   }, [todos, status]);
 
   const filterHandler = () => {
@@ -33,20 +29,6 @@ function App() {
               break;
       }
   };
-
-  /*const saveLocalTodos = () => {
-      localStorage.setItem('todos', JSON.stringify(todos));
-    }
-  };
-
-  const getLocalTodos = () => {
-    if(localStorage.getItem('todos') === null){
-      localStorage.setItem('todos', JSON.stringify([]));
-    }else{
-     let todoLocal = JSON.parse(localStorage.getItem('todos'));
-     setTodos(todoLocal);
-    }
-  };*/
 
   return (
     <div className="App">
